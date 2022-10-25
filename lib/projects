@@ -1,0 +1,111 @@
+import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+void main() => runApp(ProjectPage());
+
+class ProjectPage extends StatelessWidget {
+  const ProjectPage({Key? key}) : super(key: key);
+
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: SafeArea(
+          child: Scaffold(
+              backgroundColor: Colors.red[100],
+              appBar: AppBar(
+                title: const Text("My Projects",
+                    style: TextStyle(
+                      fontFamily: "Alkalami",
+                      fontSize: 20,
+                      color: Colors.black,
+                    )),
+                leading: IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(Icons.arrow_back, color: Colors.black),
+                ),
+              ),
+              body: Container(
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 20, horizontal: 5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Column(
+                    children: [
+                      Image.network(
+                        'https://tse3.mm.bing.net/th?id=OIP.w9bjv05w3gmYxZXo1A2gwwHaDU&pid=Api&P=0',
+                        height: 300,
+                        width: 300,
+                      ),
+                      const Divider(
+                        thickness: 2,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                      final Uri _url = Uri.parse('https://drive.google.com/drive/folders/1HKOb9IUZ13dSvxSSmDDFfSGojwxE1WIT');
+                      _launchUrl(_url);
+                    },
+
+                        child: ListTile(
+                        title: const Text('Project 1',
+                            style: TextStyle(fontWeight: FontWeight.bold)),
+                        subtitle: const Text("Food Delivery System using JAVA",
+                            style: TextStyle(
+                              fontFamily: "Alkalami",
+                            )),
+                        tileColor: Colors.white,
+                      ),
+                      ),
+                      const Divider(
+                        thickness: 2,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                      final Uri _url = Uri.parse('https://drive.google.com/drive/folders/1Xk6TFCkSsGn3XEvc7mNoT7oyiKTGIkZZ');
+                      _launchUrl(_url);
+                    },
+                        child: ListTile(
+                        title: const Text('Project 2',
+                            style: TextStyle(fontWeight: FontWeight.bold)),
+                        subtitle: const Text(
+                            "Automatic License Plate Recognition System",
+                            style: TextStyle(
+                              fontFamily: "Alkalami",
+                            )),
+                        tileColor: Colors.white,
+                      ),
+                      ),
+                      const Divider(
+                        thickness: 2,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                      final Uri _url = Uri.parse('https://drive.google.com/drive/folders/1hMI355psTLhsvFO2PJjdKBQnxYX0cb06');
+                      _launchUrl(_url);
+                    },
+                        child: ListTile(
+                        title: const Text('Project 3',
+                            style: TextStyle(fontWeight: FontWeight.bold)),
+                        subtitle: const Text(
+                            "Human and Non Human Binary Classification",
+                            style: TextStyle(
+                              fontFamily: "Alkalami",
+                            )),
+                        tileColor: Colors.white,
+                      ),
+                      ),
+                    ],
+                  )))),
+    );
+  }
+}
+
+Future<void> _launchUrl(_url) async {
+  if (!await launchUrl(_url)) {
+    throw 'Could not launch $_url';
+  }
+}
