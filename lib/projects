@@ -46,14 +46,14 @@ class ProjectPage extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                      final Uri _url = Uri.parse('https://drive.google.com/drive/folders/1HKOb9IUZ13dSvxSSmDDFfSGojwxE1WIT');
+                      final Uri _url = Uri.parse('https://github.com/DiyaSingla/Food-Ordering-system/tree/master');
                       _launchUrl(_url);
                     },
 
                         child: ListTile(
                         title: const Text('Project 1',
                             style: TextStyle(fontWeight: FontWeight.bold)),
-                        subtitle: const Text("Food Delivery System using JAVA",
+                        subtitle: const Text("Food Ordering System using JAVA",
                             style: TextStyle(
                               fontFamily: "Alkalami",
                             )),
@@ -65,7 +65,7 @@ class ProjectPage extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                      final Uri _url = Uri.parse('https://drive.google.com/drive/folders/1Xk6TFCkSsGn3XEvc7mNoT7oyiKTGIkZZ');
+                      final Uri _url = Uri.parse('https://github.com/DiyaSingla/Automatic-Licence-Plate-Recognition/tree/main');
                       _launchUrl(_url);
                     },
                         child: ListTile(
@@ -84,7 +84,7 @@ class ProjectPage extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                      final Uri _url = Uri.parse('https://drive.google.com/drive/folders/1hMI355psTLhsvFO2PJjdKBQnxYX0cb06');
+                      final Uri _url = Uri.parse('https://github.com/anu-shka-singh/ProfilePicClassification');
                       _launchUrl(_url);
                     },
                         child: ListTile(
